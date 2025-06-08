@@ -1,0 +1,1 @@
+This project deploys a visual speech recognition (lip reading) pipeline with deep learning, which attempts to transcribe spoken text from quiet videos of speakers. The system takes video data of mouth movements and predicts the associated text based on a composite of convolutional, recurrent, and sequence learning approaches.
