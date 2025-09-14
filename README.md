@@ -51,6 +51,3 @@ Our model is a three-part harmony of different neural networks working together.
 
 # 🙏 Want to Help Out?
 We'd love your help! If you find a bug, have a cool idea, or just want to make the code better, please open an issue or submit a pull request. This project is a community effort.
-
-# 📄 License
-This project is open-source and available under the MIT License. Use it, learn from it, and build something awesome!
