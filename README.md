@@ -20,45 +20,34 @@ Ever wonder what someone's saying in a loud room or a silent film? This project 
 3. Install the required dependencies:
    - pip install -r requirements.txt
 # 🎬 Let's Get Some Data!
-- Training
-  - To train the model on your own dataset, you can use the train.py script.
-  - python train.py --epochs 50 --batch_size 32
-- Inference
-  - To perform inference on a video file, use the inference.py script.
-  - python inference.py --video_path "path/to/your/video.mp4" --output_text "output.txt"
-
 - We trained our model on the GRID  dataset. It's a collection of video clips specifically designed for this kind of project. You'll need to download it and prepare it before you can train the model yourself.
+- The dataset is hosted on Google Drive and can be downloaded and extracted automatically using a simple Python script. The gdown package, which handles the download, is included in the requirements.txt file.
 
-Find the dataset here:
-<br>
-
-<center>[Insert a hyperlink to the dataset]</center>
+  - Find the dataset here:
+    - 'https://drive.google.com/uc?id=1YlvpDLix3S-U8fd-gqRwPcWXAXm8JwjL'
+  - If google link not available follow step
+  -  Download the dataset from the official source:
+    - https://www.google.com/search?q=https://www.sheffield.ac.uk/psychology/research/pac/grid-corpus&authuser=2
 
 # 💻 How to Use It
-Train Your Own Model
-Want to see how it learns? Run this command:
+1. Training the Model
+  - To train the model on the dataset, run the train.py script. You can customize the training process by specifying the number of epochs and the batch size.
+    - python train.py --epochs 50 --batch_size 32
+      - Feel free to play around with the numbers!
 
-Bash
-
-python train.py --epochs 50 --batch_size 32
-Feel free to play around with the numbers!
-
-Try it on a Video
-Got a video you want to test? This command will do the magic:
-
-Bash
-
-python inference.py --video_path "path/to/your/video.mp4" --output_text "output.txt"
-The text will be saved in a new file, ready for you to read.
+2. Performing Inference
+- Once you have a trained model, you can transcribe speech from a new video file using the inference.py script.
+  - python inference.py --video_path "/path/to/your/video.mp4" --output_text "output.txt"
+    - The text will be saved in a new file, ready for you to read.
 
 # 🧠 A Peek Under the Hood
 Our model is a three-part harmony of different neural networks working together.
 
-The "Eyes" (CNN): A Convolutional Neural Network (CNN) looks at each video frame and extracts key features of the mouth—the shape, the movement, the details that define a sound.
+- The "Eyes" (CNN): A Convolutional Neural Network (CNN) looks at each video frame and extracts key features of the mouth—the shape, the movement, the details that define a sound.
 
-The "Memory" (RNN): A Recurrent Neural Network (RNN), like a GRU or LSTM, takes these features and understands them over time. It's the part that remembers what the mouth just did and what it's about to do, piecing together the flow of speech.
+- The "Memory" (RNN): A Recurrent Neural Network (RNN), like a GRU or LSTM, takes these features and understands them over time. It's the part that remembers what the mouth just did and what it's about to do, piecing together the flow of speech.
 
-The "Translator" (CTC): The Connectionist Temporal Classification (CTC) layer is the final piece. It takes the sequence from the RNN and turns it into a coherent sentence, even when the mouth movements and the words don't perfectly line up. It's the genius that translates from "lip-talk" to real words.
+- The "Translator" (CTC): The Connectionist Temporal Classification (CTC) layer is the final piece. It takes the sequence from the RNN and turns it into a coherent sentence, even when the mouth movements and the words don't perfectly line up. It's the genius that translates from "lip-talk" to real words.
 
 # 🙏 Want to Help Out?
 We'd love your help! If you find a bug, have a cool idea, or just want to make the code better, please open an issue or submit a pull request. This project is a community effort.
