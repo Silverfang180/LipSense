@@ -6,35 +6,28 @@ Ever wonder what someone's saying in a loud room or a silent film? This project 
 
 - Challenge Ourselves: Lip reading is tough! It's the perfect challenge to combine different deep learning techniques: computer vision for seeing the mouth, sequence modeling for understanding the flow of speech, and text prediction to get the final words right.
 
-# 🛠️ Get It Running (For the Tech-Savvy!)
-Ready to dive in? Here's how to get this project on your machine.
+# Technologies Used 💻
+- Python 3.8+
+- TensorFlow/Keras
+- OpenCV
+- CTC (Connectionist Temporal Classification)
 
-- What You'll Need:
-  - Python 3.8+
-
-  - pip (for installing packages)
-
-  - git (to grab the code)
-
-- Quick Setup:
-  - Clone the code:
-  - Bash
-
-git clone https://github.com/Silverfang180/LipSense
-cd your-repo-name
-- Create a safe space (virtual environment):
-
-  - Bash
-
-python -m venv venv
-source venv/bin/activate # On Windows, use `venv\Scripts\activate`
-- Install the necessary tools:
-
-- Bash
-
-- pip install -r requirements.txt
+# Installation 🚀
+1. Clone the repository:
+   - git clone https://github.com/Silverfang180/LipSense.git
+2. Navigate to the project directory:
+   - cd LipSense
+3. Install the required dependencies:
+   - pip install -r requirements.txt
 # 🎬 Let's Get Some Data!
-We trained our model on the <insert dataset name> dataset. It's a collection of video clips specifically designed for this kind of project. You'll need to download it and prepare it before you can train the model yourself.
+- Training
+  - To train the model on your own dataset, you can use the train.py script.
+  - python train.py --epochs 50 --batch_size 32
+- Inference
+  - To perform inference on a video file, use the inference.py script.
+  - python inference.py --video_path "path/to/your/video.mp4" --output_text "output.txt"
+
+- We trained our model on the GRID  dataset. It's a collection of video clips specifically designed for this kind of project. You'll need to download it and prepare it before you can train the model yourself.
 
 Find the dataset here:
 <br>
